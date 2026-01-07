@@ -93,8 +93,8 @@ Implementasi metode _Forward Chaining_ dan _Backward Chaining_ untuk menyelesaik
 ## 📈 Statistik GitHub Saya
 
 <div align="center">
-  <img src="https://github.com/abrr25" alt="Stats Akbar" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME_GITHUB_ANDA&layout=compact&theme=radical&hide_border=true" alt="Top Langs" />
+  <img src="https://github-readme-stats.vercel.app/api?username=brr25&show_icons=true&theme=radical&hide_border=true" alt="Stats Akbar" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=brr25&layout=compact&theme=radical&hide_border=true" alt="Top Langs" />
 </div>
 
 ---
