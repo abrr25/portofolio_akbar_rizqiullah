@@ -1,0 +1,472 @@
+/* =========================================
+   1. VARIABLES & GLOBAL RESET
+   ========================================= */
+:root {
+  --bg-body: #121212; /* Hitam Gelap */
+  --bg-card: #1e1e1e; /* Abu Gelap (Kartu) */
+  --primary: #bb86fc; /* Ungu Elegan (Aksen Utama) */
+  --secondary: #03dac6; /* Teal/Hijau Tosca (Aksen Kedua) */
+  --text-main: #e0e0e0; /* Putih Tulang */
+  --text-muted: #a0a0a0; /* Abu Pudar */
+  --nav-bg: rgba(18, 18, 18, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+  animation: fadeInPage 0.8s ease-in-out;
+}
+
+/* Animasi saat halaman dimuat */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* =========================================
+   2. NAVBAR STYLING (GLASS EFFECT)
+   ========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px); /* Efek Kaca */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* Garis bawah animasi pada menu */
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: width 0.3s;
+  margin-top: 3px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--secondary);
+}
+
+/* Hamburger Menu (Untuk Mobile) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--text-main);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* =========================================
+   3. LAYOUT & GLOBAL SECTIONS
+   ========================================= */
+.section {
+  padding: 80px 5%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-container {
+  padding: 120px 5% 50px 5%;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--text-main);
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* =========================================
+   4. HERO SECTION (HOME) - TENGAH & BULAT
+   ========================================= */
+.hero {
+  background: linear-gradient(to bottom, #121212, #1a1a1a);
+  padding-top: 130px; /* Jarak dari atas (navbar) */
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column; /* Susunan Atas ke Bawah */
+  align-items: center; /* Rata Tengah Horizontal */
+  gap: 30px;
+  width: 100%;
+}
+
+/* --- Foto Profil Bulat --- */
+.hero-img {
+  position: relative;
+  width: 260px; /* Ukuran Lebar */
+  height: 260px; /* Ukuran Tinggi (Sama agar bulat) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Efek Cahaya (Glow) di belakang foto */
+.hero-img::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Foto tetap proporsional */
+  border-radius: 50%; /* Membuat bulat sempurna */
+  border: 4px solid rgba(187, 134, 252, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Teks Perkenalan --- */
+.hero-text {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.hero-text h4 {
+  font-size: 1.3rem;
+  color: var(--secondary);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+/* Tombol (Centered) */
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 35px;
+  background: var(--primary);
+  color: #000;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: 0.3s;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(187, 134, 252, 0.3);
+  background: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* =========================================
+   5. OTHER COMPONENTS (Gallery, Hobby, Contact)
+   ========================================= */
+
+/* Galeri Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.photo-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: 0.3s;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.photo-card:hover img {
+  transform: scale(1.1);
+}
+.photo-card:hover {
+  transform: translateY(-5px);
+}
+.card-caption {
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Hobby & Visi Misi Cards */
+.hobby-grid,
+.vm-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.hobby-card,
+.vm-box {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.hobby-card h3,
+.vm-box h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.hobby-card:hover,
+.vm-box:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.vm-box ul {
+  text-align: left;
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+/* Contact Form Styling */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: var(--bg-card);
+  padding: 35px;
+  border-radius: 15px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  background: #121212;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Animasi Fade In Class (Dipanggil JS) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   6. RESPONSIVE (MOBILE VIEW)
+   ========================================= */
+@media (max-width: 968px) {
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    width: 75%;
+    background: #101010;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links.nav-active {
+    right: 0;
+  }
+  .nav-links li {
+    margin: 25px 0;
+  }
+
+  /* Penyesuaian Hero di HP */
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-img {
+    width: 220px; /* Foto lebih kecil di HP */
+    height: 220px;
+  }
+
+  .hero-img::before {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hero-btns .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

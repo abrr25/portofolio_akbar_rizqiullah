@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - Portofolio Akbar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Akbar.</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang & Visi</a></li>
+        <li><a href="gallery.html">Galeri</a></li>
+        <li><a href="hobby.html">Hobi</a></li>
+        <li><a href="contact.html" class="active">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <div class="page-container">
+      <section class="container fade-in">
+        <h2 class="section-title">Hubungi Saya</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #aaa">
+          Punya pertanyaan atau ingin berkolaborasi? Kirimkan pesan di bawah
+          ini.
+        </p>
+
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="info-item">
+              <h3>Alamat</h3>
+              <p>Kab. Gowa, sulawesi selatan, Indonesia</p>
+            </div>
+            <div class="info-item">
+              <h3>Email</h3>
+              <p>muhamadakbar032005@contoh.com</p>
+            </div>
+            <div class="info-item">
+              <h3>Sosial Media</h3>
+              <div class="social-links">
+                <a
+                  href="https://www.instagram.com/akbar_rzqiullah?igsh=ZW83MngycGdiYTd4&utm_source=qr"
+                  >Instagram</a
+                >
+                <p></p>
+                <a
+                  href="https://www.linkedin.com/in/muhammad-akbar-rizqiullah-862626385?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  >LinkedIn</a
+                >
+                <p></p>
+                <a href="https://github.com/abrr25">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <form
+            action="https://formspree.io/f/xqearerr"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Nama Lengkap"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Alamat Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subjek Pesan"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Tulis pesan Anda di sini..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn submit-btn">Kirim Pesan</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
